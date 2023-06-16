@@ -4,5 +4,5 @@ function solution(x) {
 	for (let i = 0; i < num.length; i++) {
 		sum += parseInt(num[i]);
 	}
-    return (x % sum == 0) ? true : false;
+    return (x % sum == 0)
 }
