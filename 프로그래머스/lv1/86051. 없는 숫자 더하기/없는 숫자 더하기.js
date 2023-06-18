@@ -1,9 +1,7 @@
 function solution(numbers) {
-    var answer = 0;
-    for (let i = 0; i <= 9; i++) {
-        if (!numbers.includes(i)) {
-            answer += i;
-        }
+    let num = 45;
+    for (i=0;i<numbers.length;i++){
+        num -= numbers[i]
     }
-    return answer;
+    return num;
 }
