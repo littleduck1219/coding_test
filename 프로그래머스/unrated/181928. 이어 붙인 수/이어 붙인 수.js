@@ -1,21 +1,15 @@
 function solution(num_list) {
     let num_a = [];
     let num_b = [];
-    let sum_a = "";
-    let sum_b = "";
     
-    for (let i = 0; i<num_list.length; i++) {
-        if (num_list[i]%2 === 0) {
-            num_a.push(num_list[i])
+    for (let num of num_list) {
+        if (num%2 === 0) {
+            num_a.push(num)
         } else {
-            num_b.push(num_list[i])
+            num_b.push(num)
         }
     }
-    num_a.forEach(num => {
-        sum_a += num
-    })
-    num_b.forEach(num => {
-        sum_b += num
-    })
-    return parseInt(sum_a) + parseInt(sum_b)
+    let sum_a = Number(num_a.join(''));
+    let sum_b = Number(num_b.join(''));
+    return sum_a + sum_b
 }
