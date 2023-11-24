@@ -5,5 +5,5 @@ function solution(money) {
     answer.push(Math.floor(money%5500))
     
     
-    return answer;
+    return [~~(money/5500), ~~(money%5500)];
 }
