@@ -1,14 +1,14 @@
 function solution(price) {
-    let answer = 0;
-    
-    if (price >= 500000) {
-        answer = price - (price * 0.2)
-    } else if (price >= 300000) {
-        answer = price - (price * 0.1)
-    } else if (price >= 100000) {
-        answer = price - (price * 0.05)
-    } else {
-        answer = price
+    const discounts = [
+        {hold: 500000, discount: 0.2},
+        {hold: 300000, discount: 0.1},
+        {hold: 100000, discount: 0.05}
+    ]
+                    
+    for (let i = 0; i < discounts.length; i++) {
+        if (price >= discounts[i].hold) {
+            return Math.floor(price * (1 - discounts[i].discount))
+        }
     }
-    return Math.floor(answer)
+    return price
 }
