@@ -1,11 +1,17 @@
 function solution(s1, s2) {
     var answer = 0;
     
-    for ( let i = 0; i < s1.length; i++) {
-        for ( let j = 0; j < s2.length; j++) {
-            if (s1[i] === s2[j]) {
-                answer += 1
-            }
+    // for ( let i = 0; i < s1.length; i++) {
+    //     for ( let j = 0; j < s2.length; j++) {
+    //         if (s1[i] === s2[j]) {
+    //             answer += 1
+    //         }
+    //     }
+    // }
+    
+    for (let i = 0; i < s1.length; i++) {
+        if (s2.includes(s1[i])) {
+            answer += 1
         }
     }
     
