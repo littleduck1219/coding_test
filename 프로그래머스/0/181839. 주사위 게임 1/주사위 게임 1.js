@@ -1,5 +1,5 @@
 function solution(a, b) {
-    const odd = (num) => num % 2 !== 0
+    const odd = (num) => num % 2
     const pow = (num) => Math.pow(num, 2)
     
     if (odd(a) && odd(b)) return pow(a) + pow(b);
