@@ -1,15 +1,11 @@
 function solution(order) {
-    let price = 0;
+//     return order.reduce((acc, cur) => {
+        
+//         if (cur.includes("latte")) {
+//             return acc + 5000
+//          }
     
-    for (let i = 0; i < order.length; i++) {
-        if (order[i].includes("americano")) {
-            price += 4500;
-        } else if (order[i].includes("latte")) {
-            price += 5000;
-        } else if (order[i] === "anything") {
-            price += 4500
-        }
-    }
-    
-    return price
+//         return acc + 4500
+//     }, 0)
+    return order.map((coffee) => coffee.includes("latte") ? 5000 : 4500).reduce((acc, cur) => acc + cur, 0)
 }
