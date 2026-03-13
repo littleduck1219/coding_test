@@ -1,23 +1,19 @@
 function solution(my_string) {
-    let answer = 0;
-    let temp = "";
-    
-    for (let i = 0; i < my_string.length; i++) {
-        const char = my_string[i];
-        
-        if (!isNaN(my_string[i])) {
-            temp += char;
+    const result = my_string.split('').reduce((acc, char) => {
+        if (!isNaN(char)) {
+            acc.currentNumber += char;
         } else {
-            if (temp !== '') {
-                answer += Number(temp);
-                temp = '';
+            if (acc.currentNumber !== '') {
+                acc.sum += Number(acc.currentNumber);
+                acc.currentNumber = '';
             }
         }
-    }
+        return acc;
+    }, {sum: 0, currentNumber: ''});
     
-    if (temp !== '') {
-        answer += Number(temp);
-    }
+    if (result.currentNumber !== '') {
+        result.sum += Number(result.currentNumber);
+    } 
     
-    return answer;
+    return result.sum;
 }
